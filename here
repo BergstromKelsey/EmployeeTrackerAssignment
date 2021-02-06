@@ -1,0 +1,150 @@
+    //   connection.query(`SELECT * FROM top5000 WHERE artist = "${artistchoice}"` , function (err,res)
+    //   {
+    //     if (err) throw err;
+    //     console.table(res);
+    //     connection.end();
+        
+    //   }
+      
+    //  )
+    }
+)}
+
+
+
+connection.end(); 
+// function seeAll(){
+// // function afterConnection() {
+//   connection.query("SELECT * FROM Department", function (err, res) {
+//     if (err) throw err;
+//     console.table(res);
+
+
+//   });
+// // }
+// // function afterConnectionTwo() {
+//   connection.query("SELECT * FROM Roles", function (err, res) {
+//     if (err) throw err;
+//     console.table(res);
+
+
+//   });
+
+// // function afterConnectionThree() {
+//   connection.query("SELECT * FROM Employee", function (err, res) {
+//     if (err) throw err;
+//     console.table(res);
+    
+
+//   });
+
+// }
+
+
+
+  //   },
+  // {
+  //   message: "Enter Employee Title",
+  //   name: "roles"
+  // },
+  // {
+  //   message: "Enter Employee Salary",
+  //   name: "salary"
+  // },
+  // {
+  //   message: "Enter Employee First Name",
+  //   name: "firstname"
+  // },
+  // {
+  // message: "Enter Employee Last Name",
+  //   name: "lastname"
+  // },
+  // {
+  //   type: "list",
+  //   message: "Select role",
+  //   choices: [
+  //       "Add Another Employee",
+  //       "View All Employee Information",
+  //       "Update Employee Role"
+  //   ],
+  //   name: "next"
+  // }])
+  // .then(function addEmployee({next}) {
+  
+  //   if (next === "Add Another Employee") {
+  //       employeeInfo()}
+  //    else if 
+  //    (next === "View All Employee Information") 
+  //       seeAll();
+    
+  //   connection.query(function(err){
+  //         if (err) throw err;
+  //         var testing=`INSERT into Department(departmentName)values="${name}"`
+  //     connection.query(testing,function(err,result){
+  //       if (err) throw err;
+  //       console.log("working")
+      
+  //     })
+  //     })
+       
+  // })
+
+  
+  //     // console.log(employeeInfo);
+  //   //     function to update an employees role here
+    
+   
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+  // }
+
+
+
+    // .then(function ({name}) {
+    //     // var querystring =`SELECT * FROM top5000 WHERE artist = "${artistchoice}"`;
+    //     // console.log(querystring);
+    //     connection.query(`SELECT * FROM department WHERE name = "${name}"` , function (err,res)
+    //     {
+    //       if (err) throw err;
+    //       console.table(res);
+   
+          
+    //     }
+
+        
+    //    )
+    //   }
+
+
+
+    // )
+    // }
+
+
+
+
+
+
+
+// employees.push(employeeInfo);
+// addHtml(newEmp)
+// .then(function() {
+//     if (next === "Add Another Employee") {
+//         addEmployee();
+//     } else {
+//         finishedHtml();
+//     }
+ });

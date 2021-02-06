@@ -24,7 +24,7 @@ CREATE TABLE Employee (
   primary key (id)
   );
 
-INSERT INTO Department (id, departmentName ) values ('', 'Printing');
+INSERT INTO Department (id, departmentName ) values ('','');
 INSERT INTO Roles (id,title, salary, departmentID ) values ('', 'Printer','50', '');
 INSERT INTO Employee (id, firstname,lastname,roleID,managerID ) values ('', 'Kelsey','Joy','','');
 

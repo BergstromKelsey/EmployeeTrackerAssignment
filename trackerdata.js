@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-const fs = require("fs");
+// const fs = require("fs");
 // const cTable = require('console.table');
 rowCollectionOnDone: true
 
@@ -20,55 +20,22 @@ var connection = mysql.createConnection({
   database: "tracker_db"
 });
 
-
-
-
-
 connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   
-  afterConnection();
-  afterConnectionTwo();
-  afterConnectionThree();
-   employeeInfo();
-   
+  employeeInfo();
+
 });
 
 
 
-function afterConnection() {
-  connection.query("SELECT * FROM Department", function (err, res) {
-    if (err) throw err;
-    console.table(res);
-
-
-  });
-}
-function afterConnectionTwo() {
-  connection.query("SELECT * FROM Roles", function (err, res) {
-    if (err) throw err;
-    console.table(res);
-
-
-  });
-}
-function afterConnectionThree() {
-  connection.query("SELECT * FROM Employee", function (err, res) {
-    if (err) throw err;
-    console.table(res);
-    connection.end();
-
-  });
-
-}
-
-const employees =[]
 function employeeInfo() {
   inquirer.prompt([{
     message: "Enter Department Name",
-    name: "name"
+    name: "named"
   },
+    
   {
     message: "Enter Employee Title",
     name: "roles"
@@ -95,26 +62,47 @@ function employeeInfo() {
     ],
     name: "next"
   }])
-
-.then(function addEmployee({next}) {
-  let newEmp;
-  if (next === "Add Another Employee") {
-      employeeInfo();}
-  // } else if (role === "View All Employee Information") {
-  //     attatch html here
-  // } else {
-  //     function to update an employees role here
+  .then(function addEmployee({next}) {
   
- })
-}
-// employees.push(employeeInfo);
-// addHtml(newEmp)
-// .then(function() {
-//     if (next === "Add Another Employee") {
-//         addEmployee();
-//     } else {
-//         finishedHtml();
-//     }
-// });
+    if (next === "Add Another Employee") {
+        employeeInfo()}
+     else if 
+     (next === "View All Employee Information") 
+        seeAll();
+    
+    // connection.query(function(err){
+    //       if (err) throw err;
+    //       var testing=`INSERT into Department(departmentName)values="${name}"`
+    //   connection.query(testing,function(err,result){
+    //     if (err) throw err;
+    //     console.log("working")
+      
+    //   })
+      })
+     
+function seeAll(){
 
-// 
+  connection.query("SELECT * FROM Department", function (err, res) {
+    if (err) throw err;
+    console.table(res);
+
+
+  });
+
+  connection.query("SELECT * FROM Roles", function (err, res) {
+    if (err) throw err;
+    console.table(res);
+
+
+  });
+
+  connection.query("SELECT * FROM Employee", function (err, res) {
+    if (err) throw err;
+    console.table(res);
+    
+
+  });
+
+}
+       
+  }
