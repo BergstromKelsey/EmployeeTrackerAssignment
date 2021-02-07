@@ -1,4 +1,4 @@
-DROP DATABASE tracker_db;
+
 CREATE DATABASE	tracker_db;
 USE tracker_db;
 
@@ -10,7 +10,7 @@ id int(20) NOT NULL AUTO_INCREMENT,
 );
 
 CREATE TABLE Role (
-  id INT (40) NOT NULL AUTO_INCREMENT,
+  id int (40) NOT NULL AUTO_INCREMENT,
   Title VARCHAR(30) NOT NULL,
   Salary INT NOT NULL,
   DepartmentID  INT NOT NULL,
@@ -28,9 +28,9 @@ CREATE TABLE Employee (
 
 
 
-INSERT INTO Role (id,title, salary, departmentID ) values ('', 'Printer','50', '');
-INSERT INTO Employee (id, firstname,lastname,roleID,managerID ) values ('', 'Kelsey','Joy','','');
-INSERT INTO Employee (id, firstname,lastname,roleID,managerID ) values ('', 'Levi','DeJean','','');
+SELECT * FROM Department;
+SELECT * FROM Role;
+SELECT * FROM Employee
 
 
 

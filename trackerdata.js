@@ -13,29 +13,30 @@ var connection = mysql.createConnection({
   database: "tracker_db"
 });
 
-
 connection.connect(function (err) {
   if (err) throw err;
   roleQuestions();
-  // console.log("connected as id " + connection.threadId);
+  
+ // console.log("connected as id " + connection.threadId);
 });
 
 function roleQuestions() {
   inquirer.prompt([{
     message: "Enter Department Title",
     name: "depTitle"
-  }, {
-    message: "Enter Employees Role Title",
-    name: "roleTitle"
   },
   {
-    message: "Enter Employees Salary",
-    name: "empSal"
-  },
-  {
-    message: "Enter Department ID",
-    name: "depID"
-  },
+  message: "Enter Employees Role Title",
+  name: "roleTitle"
+},
+{
+  message: "Enter Employees Salary",
+  name: "empSal"
+},
+{
+  message: "Enter Department ID",
+  name: "depID"
+},
   {
     message: "Enter Employees First Name",
     name: "firstname"
@@ -53,16 +54,16 @@ function roleQuestions() {
     name: "managerID"
   }])
 
-    .then(function ({ roleTitle, empSal, depID, depTitle }) {
+    .then(function ({ depTitle, roleTitle, empSal, depID }) {
       var one = `INSERT INTO Department (DepartmentName) VALUES ("${depTitle}")`;
       var two = `INSERT INTO Role (Title,Salary,DepartmentID) VALUES ("${roleTitle}","${empSal}","${depID}")`;
       // var three = `INSERT INTO Employee (firstname,lastname,RoleID,ManagerID) VALUES ("${firstname}","${lastname}","${roleID}"),"${managerID}")`;
       connection.query(one, two, function (err, result) {
         if (err) throw err;
         console.log('data inserted')
+      })}
 
-        nextTask();
-      }
+    )
         // .then (function({firstname,lastname,roleID,managerID}){
         //   var three = `INSERT INTO Employee (firstname,lastname,RoleID,ManagerID) VALUES ("${firstname}","${lastname}","${roleID}"),"${managerID}")`;
         //   connection.query(three, function(err,result){
@@ -71,10 +72,8 @@ function roleQuestions() {
         // })} 
         // )
 
-      )
-    })
-
-
+    
+    
 
 function nextTask() {
   inquirer.prompt([{
@@ -83,22 +82,32 @@ function nextTask() {
     choices: [
       "Add Another Employee",
       "View All Employee Information",
-      // "Update Employee Role",
-      // "All done"
+      "Update Employee Role",
+      "All done"
     ],
     name: "next"
   
 }])
-.then(function addEmployee({next}) {
+addEmployee();
+function addEmployee({next}) {
 
   if (next === "Add Another Employee") {
-      roleQuestions()}
+      roleQuestions();
+    }
    else if 
-   (next === "View All Employee Information") 
+   (next === "View All Employee Information") {
       seeAll();
-
-
+    }
+    else if
+    (next === "Update Employee Role"){
+       Update();
+       }
+else 
+console.log("All Finished! ")
+    }
     
+
+  }
   function seeAll() {
     connection.query("SELECT * FROM Employee", function (err, result) {
       if (err) throw err;
@@ -111,17 +120,43 @@ function nextTask() {
     connection.query("SELECT * FROM Role", function (err, result) {
       if (err) throw err;
       console.table(result)
+      nextTask();
     });
-
-
-
+    
   }
+  
+
+
+
+
+
+
+
+ 
+  
+
+// function Update() {
+//   inquirer.prompt([{
+//     message: "Enter name of Employee whose role you would like to update:",
+//     name: "enteredname"
+//   },
+//   {
+//     message: "Enter New Role Title",
+//     name: "NewroleTitle"
+//   }])
+//   .then (function ({NewroleTitle,roleTitle,firstname,enteredname}){
+// var changes= `UPDATE role SET Title = ("${NewroleTitle}") WHERE Title = ("${roleTitle}") AND ("${firstname}") = ("${enteredname}")  `
+// connection.query(changes, function (err, result) {
+//   if (err) throw err;
+//   console.log('data inserted')
+//   nextTask();}
+
+// )}
+//   )}
+
+    
 
 
 }
 
-)}
-}
-
-
-
+// }
