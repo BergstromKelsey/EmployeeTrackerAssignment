@@ -1,3 +1,4 @@
+DROP DATABASE tracker_db;
 CREATE DATABASE	tracker_db;
 USE tracker_db;
 
@@ -9,7 +10,7 @@ id int(20) NOT NULL AUTO_INCREMENT,
 );
 
 CREATE TABLE Role (
-  id INT (40) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id INT (40) NOT NULL AUTO_INCREMENT,
   Title VARCHAR(30) NOT NULL,
   Salary INT NOT NULL,
   DepartmentID  INT NOT NULL,
@@ -20,8 +21,8 @@ CREATE TABLE Employee (
    id INT (40) AUTO_INCREMENT NOT NULL,
   firstname VARCHAR(30) NOT NULL,
   lastname VARCHAR(20) NOT NULL,
-  RoleID INT AUTO_INCREMENT ,
-  ManagerID INT AUTO_INCREMENT ,
+  RoleID INT  ,
+  ManagerID INT  ,
   primary key (id)
   );
 
