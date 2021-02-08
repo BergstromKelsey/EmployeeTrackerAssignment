@@ -4,7 +4,7 @@ This application is made for quick and easy compilation of Dperatment and Employ
 
 This project was challening in some aspects,but very interesting as well. It was my first projet using MySQL, which presented me some challenges at first. After working through them, its like everything we have learned in the Bootcamp up to this day is all coming and clicking together.
 
-To use this app, first install all packages in your terminal, and then run node. Enter employee info as you wish, Update role or view all your inputed data.
+To use this app, first install all packages in your terminal, and then run node. Enter employee info as you wish, Update role or view all of your inputed employee data!
 
 
 Walkthrough Video: https://www.youtube.com/watch?v=9ftq4k_SLvs
