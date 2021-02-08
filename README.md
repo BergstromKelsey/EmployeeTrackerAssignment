@@ -7,7 +7,8 @@ This project was challening in some aspects,but very interesting as well. It was
 To use this app, first install all packages in your terminal, and then run node. Enter employee info as you wish, Update role or view all your inputed data.
 
 
-Video Walkthrough: 
+Walkthrough Video: https://www.youtube.com/watch?v=9ftq4k_SLvs
 
-![alt text]
-![alt text]
+![alt text](Photos/Tracker1.png)
+![alt text](Photos/Tracker2.png)
+![alt text](Photos/Tracker3.png)
